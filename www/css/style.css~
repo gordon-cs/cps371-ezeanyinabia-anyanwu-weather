@@ -1,0 +1,10 @@
+.content-wrapper
+{
+    text-align: center;
+}
+
+.col > .list > .item
+{
+    font-size: 0.9em;
+}
+

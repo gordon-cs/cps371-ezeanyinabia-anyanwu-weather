@@ -1,0 +1,51 @@
+.content-wrapper
+{
+    text-align: center;
+}
+
+.col > .list > .item
+{
+    font-size: 0.9em;
+}
+
+.myChart
+{
+    padding: 5px;
+    padding-top: 20px;
+    width:100%;
+    height:auto;
+}
+
+.card
+{
+    margin: 10px !important;
+}
+
+.currently
+{
+    font-size: 200%;
+    text-align: center;
+    color: #929fb1;
+    /*  Red #F7464A */
+    /* Green #45BFBD */
+    /* Yellow #FDB45C */
+    /* Grey #949FB1 */
+    /* Dark Grey #4D5360 */
+    /* Green_2 028989 */
+    
+}
+.temp
+{
+    font-weight: bold;
+    font-size: 240%;
+    color: #fdb45c;
+}
+.home, .summary
+{
+    color: #4d5360;
+
+}
+.col .card .item span
+{
+    color: #028989;
+}

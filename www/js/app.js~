@@ -1,0 +1,55 @@
+
+var weatherModule = angular.module('weather');
+
+
+weatherModule.config(function($stateProvider,$urlRouterProvider) {
+    $stateProvider
+	.state('index',{
+	    url: '/',
+	    templateUrl: 'today.html'
+	})
+	.state('seven-day-forecast', {
+	    url: '/seven-day-forecast',
+	    templateUrl: 'sevenDayForecast.html'
+	});
+    $urlRouterProvider.otherwise('/');
+
+});
+  
+weatherModule.controller('MainController',['WeatherData','$scope', function(WeatherData,$scope) {
+    var latitude = 42.604261;
+    var longitude = -70.891161;
+    var stdWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    WeatherData.getCurrentWeather(latitude,longitude).then(function(resp) {
+	$scope.place = resp.data;
+	$scope.week = [];
+	var today = new Date($scope.place.currently.time * 1000);
+	var todayNum = today.getDay();
+	console.log(todayNum);
+	for (i=0; i < 7;i++)
+	{
+	   $scope.week.push(stdWeek[(i+todayNum) % 7]);
+	}
+	    console.log($scope.week);
+
+	console.log('GOT CURRENT', $scope.place);
+    }, function(error) {
+	alert('Unable to get current conditions');
+	console.error(error);
+    });
+
+
+   
+}]);
+
+
+weatherModule.controller('TodayController', function($scope) {
+    console.log($scope.week);
+});
+
+
+weatherModule.controller('SevenDayController', function($scope) {
+    
+});
+
