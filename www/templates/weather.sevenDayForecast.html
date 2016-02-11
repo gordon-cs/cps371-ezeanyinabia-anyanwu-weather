@@ -1,0 +1,111 @@
+<!-- <ion-view title="Seven-day Forecast"> -->
+  <ion-header-bar class="bar-royal">
+    <a href="#/weather/today"class="button icon-left ion-chevron-left">Today</a>
+    <h1 class="title">The Next Week</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="myChart">
+      <canvas id="line" class="chart chart-line" chart-data="data"
+	      chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{maintainAspectRatio: false,scaleFontSize: 8}">
+      </canvas> 
+    </div>
+    <div class="row">
+      <div class="col">
+	<div class="list card">
+	  <p class="item">
+	    {{ week[0] }} - {{ place.daily.data[0].summary }}
+	  </p>
+	  <label class="item">
+	    Min: <span> {{ place.daily.data[0].temperatureMin }} </span>
+	    Max:<span> {{ place.daily.data[0].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+	<div class="list card">
+	  <label class="item">
+	    {{ week[1] }} - {{ place.daily.data[1].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[1].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[1].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+	<div class="list card">
+	  <label class="item">
+	    {{ week[2] }} - {{ place.daily.data[2].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[2].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[2].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+	<div class="list card">
+ 	  <label class="item">
+	    {{ week[3] }} - {{ place.daily.data[3].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[3].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[3].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+    
+    <div class="row">  
+      <div class="col">
+	<div class="list card">
+	  <label class="item">
+	    {{ week[4] }} - {{ place.daily.data[4].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[4].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[4].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+
+    <div class="row">  
+      <div class="col">
+	<div class="list card">
+	  <label class="item">
+	    {{ week[5] }} - {{ place.daily.data[5].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[5].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[5].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+
+    <div class="row">  
+      <div class="col">
+	<div class="list card">
+	  <label class="item">
+	    {{ week[6] }} - {{ place.daily.data[6].summary }}
+	  </label>
+	  <label class="item">
+	    Min:<span> {{ place.daily.data[6].temperatureMin }}</span>
+	    Max:<span> {{ place.daily.data[6].temperatureMax }}</span>
+	  </label>
+	</div>
+      </div>
+    </div>
+    
+  </ion-content>
+<!-- </ion-view> -->

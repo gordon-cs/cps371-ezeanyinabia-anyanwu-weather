@@ -10,6 +10,7 @@
     <link href="css/style.css" rel="stylesheet">
     
     <script src="lib/Chart.js/Chart.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
@@ -17,163 +18,24 @@
 
     <!-- your app's js -->
     <script src="lib/angular-chart.js/dist/angular-chart.js"></script>
-    <script src="js/Services.js"></script>
-    <script src="js/app.js"></script>
-
+    <script src="js/app.module.js"></script>
+    <script src="js/weather.service.js"></script>
+    <script src="js/weather.settings.js"></script>
+    <script src="js/app.config.js"></script>
+    <script src="js/main.controller.js"></script>
+    <script src="js/weather.controller.js"></script>
 
 
   </head>
 
 
-  <body ng-app="weather">
-    <div ng-controller="MainController">
-      <ion-nav-view animation="slide-left-right"></ion-nav-view>
+  <body ng-app="weatherApp">
+    <div>
+      <i> Hi There, This part should always be showing </i>
+      <br/>
+      <ion-nav-view animation="slide-left-right" ng-controller="MainController">
+	<i> Hi there, this part should not be showing </i>
+      </ion-nav-view>
     </div>
-
-
-    <script id="today.html" type="text/ng-template">
-      <ion-view view-title="Today's Forecast" ng-controller="TodayController">
-	<ion-header-bar class="bar-royal">
-          <h1 class="title">Today's Forecast</h1>
-	  <a href="#/seven-day-forecast" class="button icon-right ion-chevron-right">In 7-days</a>
-	</ion-header-bar>
-	<ion-content>
-	  <div class="myChart">
-	    <canvas id="line" class="chart chart-line" chart-data="data_2"
-		    chart-labels="labels_2" chart-legend="true" chart-series="series_2" chart-options="{maintainAspectRatio: false,scaleFontSize: 8}">
-	    </canvas> 
-	  <div class="list list-inset card">	  
-	    <div class="item currently">
-	      It is currently
-	    </div>
-	    <div class="item temp">
-	      {{ place.currently.temperature }}
-	      <i class="icon ion-thermometer"></i>
-	    </div>
-	    <div class="item summary">
-	      {{ place.currently.summary }} and {{ feelsLike }}.
-	    </div>
-	    <div class="item home">
-	      In Home Sweet Home Wenham
-	    </div>
-	  </div>
-	</ion-content>
-      </ion-view>
-    </script>
-
-
-    <script id="sevenDayForecast.html" type="text/ng-template">
-      <ion-view title="Seven-day Forecast"ng-controller="SevenDayController">
-	<ion-header-bar class="bar-royal">
-	  <a href="#/"class="button icon-left ion-chevron-left">Today</a>
-	  <h1 class="title">The Next Week</h1>
-	</ion-header-bar>
-	<ion-content>
-	  <div class="myChart">
-	    <canvas id="line" class="chart chart-line" chart-data="data"
-		    chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{maintainAspectRatio: false,scaleFontSize: 8}">
-	    </canvas> 
-	  </div>
-	  <div class="row">
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[0] }} - {{ place.daily.data[0].summary }}
-		</label>
-		<label class="item">
-		  Min: <span> {{ place.daily.data[0].temperatureMin }} </span>
-		  Max:<span> {{ place.daily.data[0].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="row">
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[1] }} - {{ place.daily.data[1].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[1].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[1].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="row">
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[2] }} - {{ place.daily.data[2].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[2].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[2].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-
-	  <div class="row">
-	    <div class="col">
-	      <div class="list card">
- 		<label class="item">
-		  {{ week[3] }} - {{ place.daily.data[3].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[3].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[3].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-	  
-	  <div class="row">  
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[4] }} - {{ place.daily.data[4].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[4].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[4].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-
-	  <div class="row">  
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[5] }} - {{ place.daily.data[5].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[5].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[5].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-
-	  <div class="row">  
-	    <div class="col">
-	      <div class="list card">
-		<label class="item">
-		  {{ week[6] }} - {{ place.daily.data[6].summary }}
-		</label>
-		<label class="item">
-		  Min:<span> {{ place.daily.data[6].temperatureMin }}</span>
-		  Max:<span> {{ place.daily.data[6].temperatureMax }}</span>
-		</label>
-	      </div>
-	    </div>
-	  </div>
-	  
-	</ion-content>
-      </ion-view>
-    </script>
   </body>
 </html>

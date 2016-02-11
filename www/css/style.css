@@ -2,10 +2,14 @@
 {
     text-align: center;
 }
-
+.col
+{
+    text-align: center;
+}
 .col > .list > .item
 {
     font-size: 0.9em;
+    white-space: normal;
 }
 
 .myChart
@@ -18,7 +22,8 @@
 
 .card
 {
-    margin: 10px !important;
+    width: 90% auto !important;
+    margin: 0 !important;
 }
 
 .currently
