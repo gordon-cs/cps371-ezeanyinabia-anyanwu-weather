@@ -9,13 +9,51 @@ function weatherControllerFunction(weatherService,weatherSettings,$scope) {
     var stdWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     
     // Get the correct day range to display
-    $scope.week = [];
+    $scope.week = new Object();
+    $scope.week.dayName = [];
+    $scope.week.dayIcon = [];
     var today = new Date($scope.place.currently.time * 1000); // The time is given to us in seconds.
     var todayNum = today.getDay();
+    var icon = "";
     for (i=0; i < 7;i++)
     {
-	$scope.week.push(stdWeek[(i+todayNum) % 7]);
+	$scope.week.dayName.push(stdWeek[(i+todayNum) % 7]);
+	icon  = $scope.place.daily.data[i].icon;
+	if (icon == "clear-day" || icon == "clear-night")
+	{
+	    $scope.week.dayIcon[i] = "ion-ios-sunny-outline";
+	}
+	else if(icon == "rain")
+	{
+	    $scope.week.dayIcon[i] = 'ion-umbrella';
+	}
+	else if(icon == "snow" || icon == "sleet")
+	{
+	    $scope.week.dayIcon[i] = "ion-ios-snowy";
+	}
+	else if(icon == "wind")
+	{
+	    $scope.week.dayIcon[i] = "ion-paper-airplane";
+	}
+	else if(icon == "fog")
+	{
+	    $scope.week.dayIcon[i] = "No Fog icon yet";
+	}
+	else if(icon == "cloudy")
+	{
+	    $scope.week.dayIcon[i] = "ion-ios-cloudy-outline";
+	}
+	else if(icon == "partly-cloudy-day" || icon == "partly-cloudy-night")
+	{
+	    $scope.week.dayIcon[i] = "ion-ios-partlysunny-outline";
+	}
+	else
+	{
+	    console.log("Can't identify this icon!");
+	}
     }
+
+    
     var temp = $scope.place.currently.temperature;
     $scope.feelsLike = "";
     if(temp < 0) {
@@ -39,7 +77,7 @@ function weatherControllerFunction(weatherService,weatherSettings,$scope) {
 
     $scope.makeChart = function() {
 	// Set up the data for the chart
-	$scope.labels = $scope.week;
+	$scope.labels = $scope.week.dayName;
 	$scope.labels_2 = ['Currently','in 3 hours','in 6 hours','in 9 hours','in 12 hours','in 15 hours'];
 	$scope.series = ['Minimum Temperature', 'Maximum Temperature'];
 	$scope.series_2 = ['Temperature'];

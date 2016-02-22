@@ -1,31 +1,49 @@
-  <ion-header-bar class="bar-royal">
-    <h1 class="title">Today's Forecast</h1>
-    <a href="#/weather/inSevenDays" class="button icon-right ion-chevron-right">In 7-days</a>
-  </ion-header-bar>
-  <ion-content>
-    <div class="myChart">
-      <canvas id="line" class="chart chart-line" chart-data="data_2"
-	      chart-labels="labels_2" chart-legend="true" chart-series="series_2" chart-options="{maintainAspectRatio: false,scaleFontSize: 8}">
-      </canvas> 
-      <div class="list list-inset card">	  
-	<div class="item currently">
-	  It is currently
+  <!-- <ion-header-bar class="bar-royal"> -->
+  <!--   <h1 class="title">Today's Forecast</h1> -->
+  <!--   <a href="#/weather/inSevenDays" class="button icon-right ion-chevron-right">In 7-days</a> -->
+  <!-- </ion-header-bar> -->
+  <ion-content class="currently-pane">
+    <!-- <div class="myChart"> -->
+    <!--   <canvas id="line" class="chart chart-line" chart-data="data_2" -->
+    <!-- 	      chart-labels="labels_2" chart-legend="true" chart-series="series_2" chart-options="{maintainAspectRatio: false,scaleFontSize: 8}"> -->
+    <!--   </canvas>  -->
+      <!-- <div class="list list-inset card">	   -->
+      <!-- 	<div class="item currently"> -->
+      <!-- 	  It is currently -->
+      <!-- 	</div> -->
+      <!-- 	<div class="item temp"> -->
+      <!-- 	  {{ place.currently.temperature }} &deg; {{ unit }} -->
+      <!-- 	  <i class="icon ion-thermometer"></i> -->
+      <!-- 	</div> -->
+      <!-- 	<div class="item summary"> -->
+      <!-- 	  {{ place.currently.summary }} and {{ feelsLike }}. -->
+      <!-- 	</div> -->
+      <!-- 	<div class="item home"> -->
+      <!-- 	  In Home Sweet Home Wenham -->
+      <!-- 	</div> -->
+      <!-- </div> -->
+      <!-- <ion-list> -->
+      <!-- 	<button class="button button-full button-royal"  ng-click="changeTemp()" >Toggle Units (&degF/&degC)</button> -->
+      <!-- </ion-list> -->
+      <div class="content-wrapper">
+	<div class="currently">
+	  Currently
 	</div>
-	<div class="item temp">
+	<div class="temp">
 	  {{ place.currently.temperature }} &deg; {{ unit }}
-	  <i class="icon ion-thermometer"></i>
 	</div>
-	<div class="item summary">
-	  {{ place.currently.summary }} and {{ feelsLike }}.
+	<div class="today-icon">
+	 <i class="icon {{ week.dayIcon[0] }}"></i>
 	</div>
-	<div class="item home">
-	  In Home Sweet Home Wenham
+	<div class ="place">
+	  Wenham, MA
+	</div>
+	<div class="navigate-left">
+	  <a href="#/weather/inSevenDays" class="button ion-chevron-right"></a> 
 	</div>
       </div>
-      <ion-list>
-	<button class="button button-full button-royal"  ng-click="changeTemp()" >Toggle Units (&degF/&degC)</button>
-      </ion-list>
-
+      
+      
       
   </ion-content>
 

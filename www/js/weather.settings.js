@@ -8,7 +8,7 @@ function weatherSettingsFunction (weatherService)
     var currentSettings = {
 	    units : 'Fahrenheit',
 	    latitude : 42.604261,
-	    longitude : -70.891161
+	    longitude :  -70.891161
 
 	};
     currentSettings.celsiusData;

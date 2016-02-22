@@ -9,8 +9,8 @@ angular
 function mainControllerFunction(weatherData,weatherSettings,$scope,weatherService){
 
     
-    $scope.place = weatherData;
-
+    $scope.place = JSON.parse(weatherData.data);
+    
     // Store the result of the API call so we can use it later without
     // another API call.
     weatherSettings.fahrenheitData = weatherData;

@@ -1,56 +1,98 @@
+/* .content-wrapper */
+/* { */
+/*     text-align: center; */
+/* } */
+/* .col */
+/* { */
+/*     text-align: center; */
+/* } */
+/* .col > .list > .item */
+/* { */
+/*     font-size: 0.9em; */
+/*     white-space: normal; */
+/* } */
+
+/* .myChart */
+/* { */
+/*     padding: 5px; */
+/*     padding-top: 20px; */
+/*     width:100%; */
+/*     height:auto; */
+/* } */
+
+/* .card */
+/* { */
+/*     width: 90% auto !important; */
+/*     margin: 0 !important; */
+/* } */
+
+/* .currently */
+/* { */
+/*     font-size: 200%; */
+/*     text-align: center; */
+/*     color: #929fb1; */
+    
+/* } */
+/* .temp */
+/* { */
+/*     font-weight: bold; */
+/*     font-size: 240%; */
+/*     color: #fdb45c; */
+/* } */
+/* .home, .summary */
+/* { */
+/*     color: #4d5360; */
+
+/* } */
+/* .col .card .item span */
+/* { */
+/*     color: #028989; */
+/* } */
+
+.currently-pane, .seven-day-pane
+{
+    background-color: #006E90;
+    text-align: center;
+}
+
 .content-wrapper
 {
-    text-align: center;
-}
-.col
-{
-    text-align: center;
-}
-.col > .list > .item
-{
-    font-size: 0.9em;
-    white-space: normal;
-}
-
-.myChart
-{
-    padding: 5px;
-    padding-top: 20px;
-    width:100%;
-    height:auto;
-}
-
-.card
-{
-    width: 90% auto !important;
-    margin: 0 !important;
-}
-
-.currently
-{
-    font-size: 200%;
-    text-align: center;
-    color: #929fb1;
-    /*  Red #F7464A */
-    /* Green #45BFBD */
-    /* Yellow #FDB45C */
-    /* Grey #949FB1 */
-    /* Dark Grey #4D5360 */
-    /* Green_2 028989 */
-    
-}
-.temp
-{
-    font-weight: bold;
-    font-size: 240%;
-    color: #fdb45c;
-}
-.home, .summary
-{
-    color: #4d5360;
+    border: 1px solid white;
 
 }
-.col .card .item span
+.currently, .temp, .place, .navigate-left, .navigate-right
 {
-    color: #028989;
+    color: #ADCAD6;
+    font-size: 4em;
+    line-height: normal;
+    width: 95%;
+    margin: 40px auto;
+}
+.navigate-left > a.button
+{
+    background-color: inherit;
+    color: white;
+    float: right;
+}
+
+.navigate-left > a.buttun
+{
+    bacground-color: inherit;
+    color: white;
+    float: left;
+}
+
+.day-cards
+{
+
+}
+
+.row
+
+{
+    outline: 1px solid black;
+    color: #fffcf9;
+    height: 80px;
+    border-left: 10px solid #ff6978;
+    margin: 10px 0;
 }
