@@ -26,12 +26,12 @@ function configFunction($stateProvider, $urlRouterProvider)
 	.state('weather.today',{
 	    url: '/today',
 	    templateUrl: 'templates/weather.today.html',
-	    controller:'WeatherController'
+	    controller:'todayController'
 	})
 	.state('weather.seven-day-forecast', {
 	    url: '/inSevenDays',
 	    templateUrl: 'templates/weather.sevenDayForecast.html',
-	    controller: 'WeatherController'
+	    controller: 'sevenDayController'
 	});
 
 }

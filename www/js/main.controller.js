@@ -57,5 +57,43 @@ function mainControllerFunction(weatherData,weatherSettings,$scope,weatherServic
 
     }
 
+    var icon = "";
+    $scope.dayIcon = [];
+    for (i=0; i < 7;i++)
+    {
+	icon  = $scope.place.daily.data[i].icon;
+	if (icon == "clear-day" || icon == "clear-night")
+	{
+	    $scope.dayIcon[i] = "ion-ios-sunny-outline";
+	}
+	else if(icon == "rain")
+	{
+	    $scope.dayIcon[i] = "ion-umbrella";
+	}
+	else if(icon == "snow" || icon == "sleet")
+	{
+	    $scope.dayIcon[i] = "ion-ios-snowy";
+	}
+	else if(icon == "wind")
+	{
+	    $scope.dayIcon[i] = "ion-paper-airplane";
+	}
+	else if(icon == "fog")
+	{
+	    $scope.dayIcon[i] = "No Fog icon yet";
+	}
+	else if(icon == "cloudy")
+	{
+	    $scope.dayIcon[i] = "ion-ios-cloudy-outline";
+	}
+	else if(icon == "partly-cloudy-day" || icon == "partly-cloudy-night")
+	{
+	    $scope.dayIcon[i] = "ion-ios-partlysunny-outline";
+	}
+	else
+	{
+	    console.log("Can't identify this icon!");
+	}
+    }
 
 }

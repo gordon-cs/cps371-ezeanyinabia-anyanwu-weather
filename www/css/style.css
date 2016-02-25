@@ -49,7 +49,13 @@
 /*     color: #028989; */
 /* } */
 
-.currently-pane, .seven-day-pane
+.currently-pane
+{
+    background-color: #006E90;
+    text-align: center;
+}
+
+.seven-day-pane
 {
     background-color: #006E90;
     text-align: center;
@@ -57,10 +63,10 @@
 
 .content-wrapper
 {
-    border: 1px solid white;
-
+    
+    
 }
-.currently, .temp, .place, .navigate-left, .navigate-right
+.currently, .temp, .today-icon, .place
 {
     color: #ADCAD6;
     font-size: 4em;
@@ -68,31 +74,60 @@
     width: 95%;
     margin: 40px auto;
 }
-.navigate-left > a.button
-{
-    background-color: inherit;
-    color: white;
-    float: right;
-}
-
-.navigate-left > a.buttun
-{
-    bacground-color: inherit;
-    color: white;
-    float: left;
-}
 
 .day-cards
 {
-
+    margin: 3%;
 }
 
 .row
-
 {
-    outline: 1px solid black;
+    background-color: #006E90;
+    border: 1px solid white;
     color: #fffcf9;
-    height: 80px;
+    height: 65px;
     border-left: 10px solid #ff6978;
     margin: 10px 0;
+}
+
+.row .row-day
+{
+
+    width: 50%;
+    line-height: normal;
+    font-size: 1.5em;
+}
+
+.row .row-icon
+{
+
+    width: 50%;
+    line-height: normal;
+    font-size: 3em;
+}
+
+.row .row-summary
+{
+    display: none;
+    width: 50%;
+    line-height: normal;
+    font-size: 1em;
+}
+.row .row-temp
+{
+    line-heights: normal;
+    display: none;
+    width: 50%;
+    font-size: 1.5em;
+}
+.pop
+{
+    width: 300px;
+}
+
+.pop canvas
+{
+    padding: 10px;
+    width: 100%;
+    height: 220px;
 }
