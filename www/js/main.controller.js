@@ -13,7 +13,7 @@ function mainControllerFunction(weatherData,weatherSettings,$scope,weatherServic
     
     // Store the result of the API call so we can use it later without
     // another API call.
-    weatherSettings.fahrenheitData = weatherData;
+    weatherSettings.fahrenheitData = JSON.parse(weatherData.data);
     console.log('GOT CURRENT', $scope.place);
     $scope.unit = 'F';
 
@@ -26,7 +26,7 @@ function mainControllerFunction(weatherData,weatherSettings,$scope,weatherServic
 	
 	weatherService.getCurrentWeather(lat,lon, 0)
 	    .then(function(resp) {
-		weatherSettings.celsiusData = resp;
+		weatherSettings.celsiusData = JSON.parse(resp.data);
 	    }, function (err) {
 		console.log("Could not change units");
 		console.log(err);

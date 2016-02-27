@@ -7,10 +7,11 @@ angular
 function weatherServiceFunction($q,$http,FORECASTIO_KEY)
 {
     // var url = 'https://api.forecast.io/forecast/' + FORECASTIO_KEY + '/';
-    var url = 'http://cps371-weather-eze.appspot.com/?';
+
 
     return {
 	getCurrentWeather: function(lat, lng, num) {
+	    var url = 'http://cps371-weather-eze.appspot.com/?';
 	    var unit = 'units=us';
 	    var lat_param = "lat=" + lat;
 	    var lng_param = "lng=" + lng;
